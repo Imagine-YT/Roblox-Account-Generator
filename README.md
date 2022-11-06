@@ -6,6 +6,7 @@ Roblox Account Generator
 - Star This Repository To Support Me
 - For Help / To Contact / To Make Custom Projects Contact Me On Discord: Imagine#5120
 - Feel Free To Open An Issue
+- Make Sure You Have The Compatible Version Of Chromedriver Installed And Placed The Generator's Folder
 - Preview Below:
 ![image](https://user-images.githubusercontent.com/74649094/200195116-cb619bc1-690a-412a-a8bc-a553fe5519ee.png)
 - Main Generator After Putting All Info:
