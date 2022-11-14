@@ -1,54 +1,32 @@
-import ssl
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.service import Service
+import os
+import time
 import random
 import string
-import time
-import os
-import json
 import ctypes
-import sys
-from colorama import Fore, Back, Style
-from pystyle import Colorate, Colors, Center
+
+from pystyle import *
+from colorama import Fore
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.chrome.options import Options
 
 
 def clear():
     print()
     os.system('cls' if os.name == 'nt' else 'clear')
 
-def randomNumber(length):
-    numbers = string.digits
-    return ''.join(random.choice(numbers) for i in range(length))
-
-def randomString(length):
-    letters = string.ascii_lowercase + string.digits
-    return ''.join(random.choice(letters) for i in range(length))
-
 def getUsername():
     if rndd == "true":
         # get a random username from usernames.txt using random module
-        with open("./extra/usernames.txt", "r") as f:
-            usernamess = f.read().splitlines()
-            usernameesz = random.choice(usernamess)
-            username21 = usernameesz + randomNumber(4)
-            return username21
+        with open("data/usernames.txt", "r") as f:
+            user = random.choice(f.read().splitlines())
+            username = user + ''.join(random.choice(string.digits) for i in range(4))
+            return username
     else:
         return jujuname
 
-# def getUsername2():
-#     # get the first username from available and remove it from the file
-#     with open("./available.txt", "r") as f:
-#         usernamess = f.read().splitlines()
-#         usernameesz = usernamess[0]
 
-#         # remove the first username from usernames2.txt
-#         with open("./available.txt", "w") as f:
-#             for line in usernamess[1:]:
-#                 f.write(line + "\n")
-#         return usernameesz
 
 error = f"    {Fore.LIGHTYELLOW_EX}[{Fore.LIGHTRED_EX}!{Fore.LIGHTYELLOW_EX}]{Fore.RESET}"
 
@@ -105,15 +83,14 @@ def main():
                 clear()
                 starter()
             else:
-                username1 = jujuname + "_" + randomString(5)
+                username1 = jujuname + "_" + ''.join(random.choice(string.ascii_lowercase + string.digits) for i in range(5))
 
         options = Options()
         options.add_argument("log-level=3")
         # options.add_argument("--headless")
         # options.add_argument("--proxy-server=http://149.6.162.2:9999")
         options.add_experimental_option('excludeSwitches', ['enable-logging'])
-        options.add_extension("./extra/solver.crx")
-        ser = Service("./extra/chromedriver.exe")
+        options.add_extension("data/solver.crx")
         driver = webdriver.Chrome(options=options)
         driver.get("https://www.roblox.com")
         time.sleep(1)
@@ -151,11 +128,7 @@ def main():
         else:
             driver.find_element(By.XPATH, "//button[@id='FemaleButton']").click()
             print(Center.XCenter(f"{info} {Fore.LIGHTCYAN_EX}Random: {Fore.LIGHTRED_EX}Female{Fore.LIGHTCYAN_EX} Account{Fore.RESET}"))
-
         time.sleep(0.5)
-    
-
-
         try:
             driver.find_element(By.XPATH, "//button[@id='signup-button']").click()
             time.sleep(3)
@@ -194,20 +167,17 @@ def main():
                 pass
         except:
             pass
-                
         while driver.current_url != "https://www.roblox.com/home?nu=true":
             time.sleep(1)
         print(Center.XCenter(f"{success} {Fore.LIGHTCYAN_EX}Account Generated Successfully --> {Fore.LIGHTBLUE_EX}Username: {Fore.LIGHTRED_EX}{username1}"))
         counter += 1
         ctypes.windll.kernel32.SetConsoleTitleW(f"Roblox Account Generator By Imagine#5120 | {counter}/{countz} Accounts Generated")
 
-        file = open("accounts.txt", "a")
+        file = open("results/accounts.txt", "a")
         file.write(f"{username1}:ImagineOP@123\n")
         file.close()
-        with open("cookies.txt", "a") as f:
-            f.write(driver.get_cookie(".ROBLOSECURITY")["value"])
-            # json.dump(driver.get_cookie(".ROBLOSECURITY"), f)
-            f.write("\n")
+        with open("results/cookies.txt", "a") as f:
+            f.write(f'{driver.get_cookie(".ROBLOSECURITY")["value"]}\n')
         time.sleep(3)
         driver.quit()
 
