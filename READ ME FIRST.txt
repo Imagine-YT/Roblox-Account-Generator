@@ -1,0 +1,17 @@
+Thank you for downloading my Roblox Account Generator
+Before you start generating accounts make sure you have:
+
+- Installed all the modules from requirements.txt, if you haven't then open CMD inside the generator's folder and paste: pip install -r requirements.txt
+
+
+- Installed the compatible version of chromedriver, if the generator crashes after you enter the config (which is asked to you when the generator starts) then it is because the chromedriver is not compatible. Just go to https://chromedriver.chromium.org/downloads and download chromedriver matching to the current version of your pc's Google Chrome. If you don't have Google Chrome then first install that, then download Chromedriver based on the current version of your newly downloaded Google Chrome browser.
+
+
+
+If you liked my generator then make sure to leave a star :)
+
+Also if you have any errors then contact me on Discord: Imagine#5120
+
+You can also open an issue on my repository if you want.
+
+The repository link you download my gen from (if you don't have it): 
