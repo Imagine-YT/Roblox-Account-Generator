@@ -18,6 +18,8 @@ What You Should Do:
 - Feel Free To Open An Issue
 - Make Sure You Have The Compatible Version Of Chromedriver Installed And Placed The Generator's Folder
 - Preview Below:
-![image](https://user-images.githubusercontent.com/74649094/200195116-cb619bc1-690a-412a-a8bc-a553fe5519ee.png)
+![image](https://user-images.githubusercontent.com/74649094/201695627-1973cef6-b7e2-4fde-8690-265c1bd8e41d.png)
+- Or If You Want Custom Usernames:
+![image](https://user-images.githubusercontent.com/74649094/201695737-3f376b58-37fb-47bf-b377-17a675817bfc.png)
 - Main Generator After Putting All Info:
-![image](https://user-images.githubusercontent.com/74649094/200195118-32f46dec-7a36-4ead-aa3e-8fa29774e10c.png)
+![image](https://user-images.githubusercontent.com/74649094/201695469-59de5ebf-1dbb-45a2-93f7-028e736505f1.png)
