@@ -27,28 +27,28 @@ def randomString(length):
     letters = string.ascii_lowercase + string.digits
     return ''.join(random.choice(letters) for i in range(length))
 
-# def getUsername():
-#     if rndd == "true":
-#         # get a random username from usernames.txt using random module
-#         with open("./extra/usernames.txt", "r") as f:
-#             usernamess = f.read().splitlines()
-#             usernameesz = random.choice(usernamess)
-#             username21 = usernameesz + randomNumber(4)
-#             return username21
-#     else:
-#         return jujuname
+def getUsername():
+    if rndd == "true":
+        # get a random username from usernames.txt using random module
+        with open("./extra/usernames.txt", "r") as f:
+            usernamess = f.read().splitlines()
+            usernameesz = random.choice(usernamess)
+            username21 = usernameesz + randomNumber(4)
+            return username21
+    else:
+        return jujuname
 
-def getUsername2():
-    # get the first username from usernames2.txt and remove it from the file
-    with open("./available.txt", "r") as f:
-        usernamess = f.read().splitlines()
-        usernameesz = usernamess[0]
+# def getUsername2():
+#     # get the first username from available and remove it from the file
+#     with open("./available.txt", "r") as f:
+#         usernamess = f.read().splitlines()
+#         usernameesz = usernamess[0]
 
-        # remove the first username from usernames2.txt
-        with open("./available.txt", "w") as f:
-            for line in usernamess[1:]:
-                f.write(line + "\n")
-        return usernameesz
+#         # remove the first username from usernames2.txt
+#         with open("./available.txt", "w") as f:
+#             for line in usernamess[1:]:
+#                 f.write(line + "\n")
+#         return usernameesz
 
 error = f"    {Fore.LIGHTYELLOW_EX}[{Fore.LIGHTRED_EX}!{Fore.LIGHTYELLOW_EX}]{Fore.RESET}"
 
@@ -78,7 +78,7 @@ def main():
     >> {Fore.LIGHTCYAN_EX}Made By Imagine {Fore.LIGHTRED_EX}
     >> {Fore.LIGHTCYAN_EX}Version 2.0 {Fore.LIGHTRED_EX}
     >> {Fore.LIGHTCYAN_EX}Last Update: Funcaptcha Bypass {Fore.LIGHTRED_EX}
-    >> {Fore.LIGHTCYAN_EX}Current Update: Made The UI Better - Added New Features And Removed The Buggy Ones  {Fore.LIGHTRED_EX}
+    >> {Fore.LIGHTCYAN_EX}Current Update: Made The UI Better - Added New Features And Removed The Buggy Ones {Fore.LIGHTRED_EX}
     >> {Fore.LIGHTCYAN_EX}Next Update: IDK {Fore.LIGHTRED_EX}
     >> {Fore.LIGHTCYAN_EX}Generating {Fore.LIGHTRED_EX}{countz} {Fore.LIGHTCYAN_EX}Accounts{Fore.RESET}
 
@@ -87,7 +87,7 @@ def main():
     for i in range(countz):
         ctypes.windll.kernel32.SetConsoleTitleW(f"Roblox Account Generator By Imagine#5120 | {counter}/{countz} Accounts Generated")
         if rndd == "true":
-            username1 = getUsername2()
+            username1 = getUsername()
             # username1 = getUsername()
             amount_a = len(username1)
             if amount_a > 19:
@@ -115,15 +115,7 @@ def main():
         options.add_extension("./extra/solver.crx")
         ser = Service("./extra/chromedriver.exe")
         driver = webdriver.Chrome(options=options)
-        # if byp_key == "N" or "n":
-            # driver.get("https://www.roblox.com")
-        # else:
-        driver.get(f'https://nopecha.com/setup#8m6ouhhbn1')
-        driver.execute_script("window.open('https://www.roblox.com');")
-        driver.switch_to.window(driver.window_handles[1])
-        time.sleep(1)
         driver.get("https://www.roblox.com")
-        # driver.get("https://www.roblox.com")
         time.sleep(1)
         try:
             if driver.find(By.XPATH, "//button[contains(text(),'Accept All')]").is_displayed == True:
