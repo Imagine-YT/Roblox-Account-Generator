@@ -14,7 +14,7 @@ New Features Of Update 2.0:
 
 What You Should Do:
 - Star This Repository To Support Me
-- For Help / To Contact / To Make Custom Projects Contact Me On Discord: Imagine#5120
+- For Help / To Contact / To Make Custom Projects Contact Me On Discord: DISCORD BANNED MY ACCOUNT
 - Feel Free To Open An Issue
 - Make Sure You Have The Compatible Version Of Chromedriver Installed And Placed The Generator's Folder
 - Preview Below:
