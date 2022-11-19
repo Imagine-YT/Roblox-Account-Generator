@@ -4,6 +4,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.proxy import Proxy, ProxyType
 import random
 import string
 import time
@@ -107,15 +108,21 @@ def main():
             else:
                 username1 = jujuname + "_" + randomString(5)
 
-        options = Options()
-        options.add_argument("log-level=3")
+        proxy = Proxy()
+        
         # options.add_argument("--headless")
         # options.add_argument("--proxy-server=http://149.6.162.2:9999")
+
+        options = Options()
+        options.add_argument("log-level=3")
         options.add_experimental_option('excludeSwitches', ['enable-logging'])
         options.add_extension("./extra/solver.crx")
+
         driver = webdriver.Chrome(executable_path = "./extra/chromedriver.exe", options=options)
         driver.get("https://www.roblox.com")
+
         time.sleep(1)
+        
         try:
             if driver.find(By.XPATH, "//button[contains(text(),'Accept All')]").is_displayed == True:
                 driver.find_element(By.XPATH, "//button[contains(text(),'Accept All')]").click()
