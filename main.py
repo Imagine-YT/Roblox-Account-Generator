@@ -113,8 +113,7 @@ def main():
         # options.add_argument("--proxy-server=http://149.6.162.2:9999")
         options.add_experimental_option('excludeSwitches', ['enable-logging'])
         options.add_extension("./extra/solver.crx")
-        ser = Service("./extra/chromedriver.exe")
-        driver = webdriver.Chrome(options=options)
+        driver = webdriver.Chrome(executable_path = "./extra/chromedriver.exe", options=options)
         driver.get("https://www.roblox.com")
         time.sleep(1)
         try:
