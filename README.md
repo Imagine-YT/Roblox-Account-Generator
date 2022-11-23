@@ -4,9 +4,10 @@ Roblox Account Generator
 - Packed .EXE Version In Releases
 - "pip install -r requirements.txt" To Install All The Dependencies
 
-New Features Of Update 2.0:
+New Features:
 - Now The Gen Is Fully Automatic But Still (just a bittt) Buggy
 - Fixed Most Of The Bugs Which Were Reported To Me + I Found Of The Generator's Previous Version
+- Random Passwords
 - Works Faster Than Update 1.4
 - Added Better Usernames So They Look Realistic, Custom Usernames Is Still There :)
 - New UI Which Looks Better And Much More User Friendly
@@ -14,7 +15,7 @@ New Features Of Update 2.0:
 
 What You Should Do:
 - Star This Repository To Support Me
-- For Help / To Contact / To Make Custom Projects Contact Me On Discord: DISCORD BANNED MY ACCOUNT
+- For Help / To Contact / To Make Custom Projects Contact Me On Discord: Imagine#9106
 - Feel Free To Open An Issue
 - Make Sure You Have The Compatible Version Of Chromedriver Installed And Placed The Generator's Folder
 - Preview Below:
