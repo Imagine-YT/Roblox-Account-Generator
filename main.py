@@ -88,7 +88,7 @@ def main():
     """))
 
     for i in range(countz):
-        ctypes.windll.kernel32.SetConsoleTitleW(f"Roblox Account Generator By Imagine#5120 | {counter}/{countz} Accounts Generated")
+        ctypes.windll.kernel32.SetConsoleTitleW(f"Roblox Account Generator By Imagine#9106 | {counter}/{countz} Accounts Generated")
         if rndd == "true":
             username1 = getUsername()
             password1 = randomPassword()
@@ -204,7 +204,7 @@ def main():
             time.sleep(1)
         print(Center.XCenter(f"{success} {Fore.LIGHTCYAN_EX}Account Generated Successfully --> {Fore.LIGHTBLUE_EX}Username: {Fore.LIGHTRED_EX}{username1}"))
         counter += 1
-        ctypes.windll.kernel32.SetConsoleTitleW(f"Roblox Account Generator By Imagine#5120 | {counter}/{countz} Accounts Generated")
+        ctypes.windll.kernel32.SetConsoleTitleW(f"Roblox Account Generator By Imagine#9106 | {counter}/{countz} Accounts Generated")
 
         file = open("accounts.txt", "a")
         file.write(f"{username1}:{password1}\n")
@@ -217,7 +217,7 @@ def main():
         driver.quit()
 
 def starter():
-    ctypes.windll.kernel32.SetConsoleTitleW(f"Roblox Account Generator By Imagine#5120")
+    ctypes.windll.kernel32.SetConsoleTitleW(f"Roblox Account Generator By Imagine#9106")
     global countz, jujuname, jondor, rndd#, byp_key
     print("\n")
     try:
