@@ -8,12 +8,15 @@ import random
 import string
 import time
 import os
+import secrets
 import json
 import ctypes
 import sys
 from colorama import Fore, Back, Style
 from pystyle import Colorate, Colors, Center
 
+def randomPassword():
+    return secrets.token_urlsafe(25)
 
 def clear():
     print()
@@ -76,9 +79,9 @@ def main():
     print(banner)
     print(Center.XCenter(f"""{Fore.LIGHTRED_EX}
     >> {Fore.LIGHTCYAN_EX}Made By Imagine {Fore.LIGHTRED_EX}
-    >> {Fore.LIGHTCYAN_EX}Version 2.0 {Fore.LIGHTRED_EX}
-    >> {Fore.LIGHTCYAN_EX}Last Update: Funcaptcha Bypass {Fore.LIGHTRED_EX}
-    >> {Fore.LIGHTCYAN_EX}Current Update: Made The UI Better - Added New Features And Removed The Buggy Ones {Fore.LIGHTRED_EX}
+    >> {Fore.LIGHTCYAN_EX}Version 2.1 {Fore.LIGHTRED_EX}
+    >> {Fore.LIGHTCYAN_EX}Last Update: Made The UI Better - Added New Features And Removed The Buggy Ones {Fore.LIGHTRED_EX}
+    >> {Fore.LIGHTCYAN_EX}Current Update: Randomly Generated Passwords {Fore.LIGHTRED_EX}
     >> {Fore.LIGHTCYAN_EX}Next Update: IDK {Fore.LIGHTRED_EX}
     >> {Fore.LIGHTCYAN_EX}Generating {Fore.LIGHTRED_EX}{countz} {Fore.LIGHTCYAN_EX}Accounts{Fore.RESET}
 
@@ -88,6 +91,7 @@ def main():
         ctypes.windll.kernel32.SetConsoleTitleW(f"Roblox Account Generator By Imagine#5120 | {counter}/{countz} Accounts Generated")
         if rndd == "true":
             username1 = getUsername()
+            password1 = randomPassword()
             # username1 = getUsername()
             amount_a = len(username1)
             if amount_a > 19:
@@ -106,6 +110,7 @@ def main():
                 starter()
             else:
                 username1 = jujuname + "_" + randomString(5)
+                password1 = randomPassword()
 
         options = Options()
         options.add_argument("log-level=3")
@@ -140,7 +145,7 @@ def main():
         username.send_keys(username1)
         password = driver.find_element(By.XPATH, "//input[@id='signup-password']")
         password.click()
-        password.send_keys("ImagineOP@123")
+        password.send_keys(password1)
         time.sleep(0.5)
 
         rand = random.random()
@@ -202,7 +207,7 @@ def main():
         ctypes.windll.kernel32.SetConsoleTitleW(f"Roblox Account Generator By Imagine#5120 | {counter}/{countz} Accounts Generated")
 
         file = open("accounts.txt", "a")
-        file.write(f"{username1}:ImagineOP@123\n")
+        file.write(f"{username1}:{password1}\n")
         file.close()
         with open("cookies.txt", "a") as f:
             f.write(driver.get_cookie(".ROBLOSECURITY")["value"])
