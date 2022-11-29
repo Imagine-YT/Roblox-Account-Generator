@@ -80,8 +80,8 @@ def main():
     print(Center.XCenter(f"""{Fore.LIGHTRED_EX}
     >> {Fore.LIGHTCYAN_EX}Made By Imagine {Fore.LIGHTRED_EX}
     >> {Fore.LIGHTCYAN_EX}Version 2.1 {Fore.LIGHTRED_EX}
-    >> {Fore.LIGHTCYAN_EX}Last Update: Made The UI Better - Added New Features And Removed The Buggy Ones {Fore.LIGHTRED_EX}
-    >> {Fore.LIGHTCYAN_EX}Current Update: Randomly Generated Passwords {Fore.LIGHTRED_EX}
+    >> {Fore.LIGHTCYAN_EX}Last Update: Randomly Generated Passwords {Fore.LIGHTRED_EX}
+    >> {Fore.LIGHTCYAN_EX}Current Update: Inappropriate Name Check {Fore.LIGHTRED_EX}
     >> {Fore.LIGHTCYAN_EX}Next Update: IDK {Fore.LIGHTRED_EX}
     >> {Fore.LIGHTCYAN_EX}Generating {Fore.LIGHTRED_EX}{countz} {Fore.LIGHTCYAN_EX}Accounts{Fore.RESET}
 
