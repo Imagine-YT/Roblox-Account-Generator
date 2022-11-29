@@ -181,6 +181,16 @@ def main():
         except:
             pass
         try:
+            if driver.find(By.XPATH, "//p[@id='signup-usernameInputValidation']").text == "This username is not appropriate for Roblox.":
+                print(Center.XCenter(f"{error} {Fore.LIGHTRED_EX}Error: {Fore.LIGHTCYAN_EX}Username Is Not Appropriate!{Fore.RESET}"))
+                print(Center.XCenter(f"{error} {Fore.LIGHTRED_EX}Error: {Fore.LIGHTCYAN_EX}Skipping Account...{Fore.RESET}"))
+                driver.quit()
+                continue
+            else:
+                pass
+        except:
+            pass
+        try:
             if driver.find_element(By.XPATH, "//div[@id='GeneralErrorText']").text == "Sorry! An unknown error occurred. Please try again later.":
                 print(Center.XCenter(f"{error} {Fore.LIGHTRED_EX}Error: {Fore.LIGHTCYAN_EX}Rate Limit!{Fore.RESET}"))
                 print(Center.XCenter(f"{error} {Fore.LIGHTRED_EX}Time To Take A Nap For About 45 Minutes...{Fore.RESET}"))
