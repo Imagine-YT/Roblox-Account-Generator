@@ -81,7 +81,7 @@ def main():
     >> {Fore.LIGHTCYAN_EX}Made By Imagine {Fore.LIGHTRED_EX}
     >> {Fore.LIGHTCYAN_EX}Version 2.1 {Fore.LIGHTRED_EX}
     >> {Fore.LIGHTCYAN_EX}Last Update: Randomly Generated Passwords {Fore.LIGHTRED_EX}
-    >> {Fore.LIGHTCYAN_EX}Current Update: Inappropriate Name Check {Fore.LIGHTRED_EX}
+    >> {Fore.LIGHTCYAN_EX}Current Update: Inappropriate Name Check + Patch {Fore.LIGHTRED_EX}
     >> {Fore.LIGHTCYAN_EX}Next Update: IDK {Fore.LIGHTRED_EX}
     >> {Fore.LIGHTCYAN_EX}Generating {Fore.LIGHTRED_EX}{countz} {Fore.LIGHTCYAN_EX}Accounts{Fore.RESET}
 
@@ -118,8 +118,8 @@ def main():
         # options.add_argument("--proxy-server=http://149.6.162.2:9999")
         options.add_experimental_option('excludeSwitches', ['enable-logging'])
         options.add_extension("./extra/solver.crx")
-        ser = Service("./extra/chromedriver.exe")
-        driver = webdriver.Chrome(options=options)
+        service = Service("./extra/chromedriver.exe")
+        driver = webdriver.Chrome(service=service, options=options)
         driver.get("https://www.roblox.com")
         time.sleep(1)
         try:
