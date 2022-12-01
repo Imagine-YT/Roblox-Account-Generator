@@ -80,8 +80,8 @@ def main():
     print(Center.XCenter(f"""{Fore.LIGHTRED_EX}
     >> {Fore.LIGHTCYAN_EX}Made By Imagine {Fore.LIGHTRED_EX}
     >> {Fore.LIGHTCYAN_EX}Version 2.1 {Fore.LIGHTRED_EX}
-    >> {Fore.LIGHTCYAN_EX}Last Update: Made The UI Better - Added New Features And Removed The Buggy Ones {Fore.LIGHTRED_EX}
-    >> {Fore.LIGHTCYAN_EX}Current Update: Randomly Generated Passwords {Fore.LIGHTRED_EX}
+    >> {Fore.LIGHTCYAN_EX}Last Update: Randomly Generated Passwords {Fore.LIGHTRED_EX}
+    >> {Fore.LIGHTCYAN_EX}Current Update: Inappropriate Name Check + Patch {Fore.LIGHTRED_EX}
     >> {Fore.LIGHTCYAN_EX}Next Update: IDK {Fore.LIGHTRED_EX}
     >> {Fore.LIGHTCYAN_EX}Generating {Fore.LIGHTRED_EX}{countz} {Fore.LIGHTCYAN_EX}Accounts{Fore.RESET}
 
@@ -118,8 +118,8 @@ def main():
         # options.add_argument("--proxy-server=http://149.6.162.2:9999")
         options.add_experimental_option('excludeSwitches', ['enable-logging'])
         options.add_extension("./extra/solver.crx")
-        ser = Service("./extra/chromedriver.exe")
-        driver = webdriver.Chrome(options=options)
+        service = Service("./extra/chromedriver.exe")
+        driver = webdriver.Chrome(service=service, options=options)
         driver.get("https://www.roblox.com")
         time.sleep(1)
         try:
@@ -173,6 +173,16 @@ def main():
         try:
             if driver.find(By.XPATH, "//p[@id='signup-usernameInputValidation']").text == "This username is already in use.":
                 print(Center.XCenter(f"{error} {Fore.LIGHTRED_EX}Error: {Fore.LIGHTCYAN_EX}Username Is Taken!{Fore.RESET}"))
+                print(Center.XCenter(f"{error} {Fore.LIGHTRED_EX}Error: {Fore.LIGHTCYAN_EX}Skipping Account...{Fore.RESET}"))
+                driver.quit()
+                continue
+            else:
+                pass
+        except:
+            pass
+        try:
+            if driver.find(By.XPATH, "//p[@id='signup-usernameInputValidation']").text == "This username is not appropriate for Roblox.":
+                print(Center.XCenter(f"{error} {Fore.LIGHTRED_EX}Error: {Fore.LIGHTCYAN_EX}Username Is Not Appropriate!{Fore.RESET}"))
                 print(Center.XCenter(f"{error} {Fore.LIGHTRED_EX}Error: {Fore.LIGHTCYAN_EX}Skipping Account...{Fore.RESET}"))
                 driver.quit()
                 continue
