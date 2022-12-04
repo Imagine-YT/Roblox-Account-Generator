@@ -8,15 +8,12 @@ import random
 import string
 import time
 import os
-import secrets
 import json
 import ctypes
 import sys
 from colorama import Fore, Back, Style
 from pystyle import Colorate, Colors, Center
 
-def randomPassword():
-    return secrets.token_urlsafe(25)
 
 def clear():
     print()
@@ -79,19 +76,18 @@ def main():
     print(banner)
     print(Center.XCenter(f"""{Fore.LIGHTRED_EX}
     >> {Fore.LIGHTCYAN_EX}Made By Imagine {Fore.LIGHTRED_EX}
-    >> {Fore.LIGHTCYAN_EX}Version 2.1 {Fore.LIGHTRED_EX}
-    >> {Fore.LIGHTCYAN_EX}Last Update: Randomly Generated Passwords {Fore.LIGHTRED_EX}
-    >> {Fore.LIGHTCYAN_EX}Current Update: Inappropriate Name Check + Patch {Fore.LIGHTRED_EX}
+    >> {Fore.LIGHTCYAN_EX}Version 2.0 {Fore.LIGHTRED_EX}
+    >> {Fore.LIGHTCYAN_EX}Last Update: Funcaptcha Bypass {Fore.LIGHTRED_EX}
+    >> {Fore.LIGHTCYAN_EX}Current Update: Made The UI Better - Added New Features And Removed The Buggy Ones {Fore.LIGHTRED_EX}
     >> {Fore.LIGHTCYAN_EX}Next Update: IDK {Fore.LIGHTRED_EX}
     >> {Fore.LIGHTCYAN_EX}Generating {Fore.LIGHTRED_EX}{countz} {Fore.LIGHTCYAN_EX}Accounts{Fore.RESET}
 
     """))
 
     for i in range(countz):
-        ctypes.windll.kernel32.SetConsoleTitleW(f"Roblox Account Generator By Imagine#9106 | {counter}/{countz} Accounts Generated")
+        ctypes.windll.kernel32.SetConsoleTitleW(f"Roblox Account Generator By Imagine#5120 | {counter}/{countz} Accounts Generated")
         if rndd == "true":
             username1 = getUsername()
-            password1 = randomPassword()
             # username1 = getUsername()
             amount_a = len(username1)
             if amount_a > 19:
@@ -110,16 +106,13 @@ def main():
                 starter()
             else:
                 username1 = jujuname + "_" + randomString(5)
-                password1 = randomPassword()
 
         options = Options()
         options.add_argument("log-level=3")
-        # options.add_argument("--headless")
-        # options.add_argument("--proxy-server=http://149.6.162.2:9999")
         options.add_experimental_option('excludeSwitches', ['enable-logging'])
         options.add_extension("./extra/solver.crx")
-        service = Service("./extra/chromedriver.exe")
-        driver = webdriver.Chrome(service=service, options=options)
+        ser = Service("./extra/chromedriver.exe")
+        driver = webdriver.Chrome(options=options)
         driver.get("https://www.roblox.com")
         time.sleep(1)
         try:
@@ -133,20 +126,24 @@ def main():
         month = driver.find_element(By.XPATH, "//select[@id='MonthDropdown']")  
         month.click()
         month.send_keys("January")
+        time.sleep(2)
         day = driver.find_element(By.XPATH, "//select[@id='DayDropdown']")
         day.click()
         day.send_keys("1")
+        time.sleep(2)
         year = driver.find_element(By.XPATH, "//select[@id='YearDropdown']")
         year.click()
         year.send_keys("2000")
         year.send_keys(Keys.RETURN)
+        time.sleep(2)
         username = driver.find_element(By.XPATH, "//input[@id='signup-username']")
         username.click()
         username.send_keys(username1)
+        time.sleep(2)
         password = driver.find_element(By.XPATH, "//input[@id='signup-password']")
         password.click()
-        password.send_keys(password1)
-        time.sleep(0.5)
+        password.send_keys("ImagineOP@123")
+        time.sleep(1)
 
         rand = random.random()
         #print(rand)
@@ -169,20 +166,10 @@ def main():
             print(Center.XCenter(f"{error} {Fore.LIGHTRED_EX}Error: {Fore.LIGHTCYAN_EX}Skipping Account...{Fore.RESET}"))
             driver.quit()
             continue
-        time.sleep(3)
+        time.sleep(2)
         try:
             if driver.find(By.XPATH, "//p[@id='signup-usernameInputValidation']").text == "This username is already in use.":
                 print(Center.XCenter(f"{error} {Fore.LIGHTRED_EX}Error: {Fore.LIGHTCYAN_EX}Username Is Taken!{Fore.RESET}"))
-                print(Center.XCenter(f"{error} {Fore.LIGHTRED_EX}Error: {Fore.LIGHTCYAN_EX}Skipping Account...{Fore.RESET}"))
-                driver.quit()
-                continue
-            else:
-                pass
-        except:
-            pass
-        try:
-            if driver.find(By.XPATH, "//p[@id='signup-usernameInputValidation']").text == "This username is not appropriate for Roblox.":
-                print(Center.XCenter(f"{error} {Fore.LIGHTRED_EX}Error: {Fore.LIGHTCYAN_EX}Username Is Not Appropriate!{Fore.RESET}"))
                 print(Center.XCenter(f"{error} {Fore.LIGHTRED_EX}Error: {Fore.LIGHTCYAN_EX}Skipping Account...{Fore.RESET}"))
                 driver.quit()
                 continue
@@ -214,20 +201,20 @@ def main():
             time.sleep(1)
         print(Center.XCenter(f"{success} {Fore.LIGHTCYAN_EX}Account Generated Successfully --> {Fore.LIGHTBLUE_EX}Username: {Fore.LIGHTRED_EX}{username1}"))
         counter += 1
-        ctypes.windll.kernel32.SetConsoleTitleW(f"Roblox Account Generator By Imagine#9106 | {counter}/{countz} Accounts Generated")
+        ctypes.windll.kernel32.SetConsoleTitleW(f"Roblox Account Generator By Imagine#5120 | {counter}/{countz} Accounts Generated")
 
         file = open("accounts.txt", "a")
-        file.write(f"{username1}:{password1}\n")
+        file.write(f"{username1}:ImagineOP@123\n")
         file.close()
         with open("cookies.txt", "a") as f:
             f.write(driver.get_cookie(".ROBLOSECURITY")["value"])
             # json.dump(driver.get_cookie(".ROBLOSECURITY"), f)
             f.write("\n")
-        time.sleep(3)
+        time.sleep(1)
         driver.quit()
 
 def starter():
-    ctypes.windll.kernel32.SetConsoleTitleW(f"Roblox Account Generator By Imagine#9106")
+    ctypes.windll.kernel32.SetConsoleTitleW(f"Roblox Account Generator By Imagine#5120")
     global countz, jujuname, jondor, rndd#, byp_key
     print("\n")
     try:
