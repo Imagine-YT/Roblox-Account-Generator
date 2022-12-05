@@ -181,7 +181,7 @@ def main():
         except:
             pass
         try:
-            if driver.find(By.XPATH, "//p[@id='signup-usernameInputValidation']").text == "This username is not appropriate for Roblox.":
+            if driver.find(By.XPATH, "//p[@id='signup-usernameInputValidation']").text == "Username not appropriate for Roblox.":
                 print(Center.XCenter(f"{error} {Fore.LIGHTRED_EX}Error: {Fore.LIGHTCYAN_EX}Username Is Not Appropriate!{Fore.RESET}"))
                 print(Center.XCenter(f"{error} {Fore.LIGHTRED_EX}Error: {Fore.LIGHTCYAN_EX}Skipping Account...{Fore.RESET}"))
                 driver.quit()
