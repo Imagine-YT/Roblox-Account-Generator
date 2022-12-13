@@ -123,7 +123,7 @@ def main():
         driver.get("https://www.roblox.com")
         time.sleep(1)
         try:
-            if driver.find(By.XPATH, "//button[contains(text(),'Accept All')]").is_displayed == True:
+            if driver.find_element(By.XPATH, "//button[contains(text(),'Accept All')]").is_displayed == True:
                 driver.find_element(By.XPATH, "//button[contains(text(),'Accept All')]").click()
             else:
                 pass
@@ -171,7 +171,7 @@ def main():
             continue
         time.sleep(3)
         try:
-            if driver.find(By.XPATH, "//p[@id='signup-usernameInputValidation']").text == "This username is already in use.":
+            if driver.find_element(By.XPATH, "//p[@id='signup-usernameInputValidation']").text == "This username is already in use.":
                 print(Center.XCenter(f"{error} {Fore.LIGHTRED_EX}Error: {Fore.LIGHTCYAN_EX}Username Is Taken!{Fore.RESET}"))
                 print(Center.XCenter(f"{error} {Fore.LIGHTRED_EX}Error: {Fore.LIGHTCYAN_EX}Skipping Account...{Fore.RESET}"))
                 driver.quit()
@@ -181,7 +181,7 @@ def main():
         except:
             pass
         try:
-            if driver.find(By.XPATH, "//p[@id='signup-usernameInputValidation']").text == "Username not appropriate for Roblox.":
+            if driver.find_element(By.XPATH, "//p[@id='signup-usernameInputValidation']").text == "Username not appropriate for Roblox.":
                 print(Center.XCenter(f"{error} {Fore.LIGHTRED_EX}Error: {Fore.LIGHTCYAN_EX}Username Is Not Appropriate!{Fore.RESET}"))
                 print(Center.XCenter(f"{error} {Fore.LIGHTRED_EX}Error: {Fore.LIGHTCYAN_EX}Skipping Account...{Fore.RESET}"))
                 driver.quit()
