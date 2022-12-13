@@ -36,7 +36,7 @@ def getUsername():
         with open("./extra/usernames.txt", "r") as f:
             usernamess = f.read().splitlines()
             usernameesz = random.choice(usernamess)
-            username21 = usernameesz + randomNumber(4)
+            username21 = usernameesz + randomNumber(6)
             return username21
     else:
         return jujuname
