@@ -11,6 +11,7 @@ New Features:
 - Works Faster Than Update 1.4
 - Added Better Usernames So They Look Realistic, Custom Usernames Is Still There :)
 - New UI Which Looks Better And Much More User Friendly
+- Captcha Key Support. Now You Can Use Your NopeCHA Keys
 - A Few More Features Were Added (but I don't remember them)
 
 What You Should Do:
