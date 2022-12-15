@@ -79,9 +79,9 @@ def main():
     print(banner)
     print(Center.XCenter(f"""{Fore.LIGHTRED_EX}
     >> {Fore.LIGHTCYAN_EX}Made By Imagine {Fore.LIGHTRED_EX}
-    >> {Fore.LIGHTCYAN_EX}Version 2.1 {Fore.LIGHTRED_EX}
-    >> {Fore.LIGHTCYAN_EX}Last Update: Randomly Generated Passwords {Fore.LIGHTRED_EX}
-    >> {Fore.LIGHTCYAN_EX}Current Update: Inappropriate Name Check + Patch {Fore.LIGHTRED_EX}
+    >> {Fore.LIGHTCYAN_EX}Version 2.2 {Fore.LIGHTRED_EX}
+    >> {Fore.LIGHTCYAN_EX}Last Update: Inappropriate Name Check + Patch {Fore.LIGHTRED_EX}
+    >> {Fore.LIGHTCYAN_EX}Current Update: NopeCHA Key Support {Fore.LIGHTRED_EX}
     >> {Fore.LIGHTCYAN_EX}Next Update: IDK {Fore.LIGHTRED_EX}
     >> {Fore.LIGHTCYAN_EX}Generating {Fore.LIGHTRED_EX}{countz} {Fore.LIGHTCYAN_EX}Accounts{Fore.RESET}
 
@@ -117,9 +117,15 @@ def main():
         # options.add_argument("--headless")
         # options.add_argument("--proxy-server=http://149.6.162.2:9999")
         options.add_experimental_option('excludeSwitches', ['enable-logging'])
-        options.add_extension("./extra/solver.crx")
+        options.add_extension("./extra/ext.crx") # Updated Captcha Solver (https://nopecha.com/f/ext.crx)
         service = Service("./extra/chromedriver.exe")
         driver = webdriver.Chrome(service=service, options=options)
+        if key0 == "n" or key0 == "N":
+            pass
+        else:
+            NOPECHA_KEY = key0
+            driver.get(f"https://nopecha.com/setup#{NOPECHA_KEY}") # Sometimes it doesn't work the first time.
+            driver.get(f"https://nopecha.com/setup#{NOPECHA_KEY}")
         driver.get("https://www.roblox.com")
         time.sleep(1)
         try:
@@ -152,10 +158,10 @@ def main():
         #print(rand)
         if rand < 0.5:
             driver.find_element(By.XPATH, "//button[@id='MaleButton']").click()
-            print(Center.XCenter(f"{info} {Fore.LIGHTCYAN_EX}Random Gender: {Fore.LIGHTRED_EX}Male{Fore.LIGHTCYAN_EX} Account{Fore.RESET}"))
+            # print(Center.XCenter(f"{info} {Fore.LIGHTCYAN_EX}Random Gender: {Fore.LIGHTRED_EX}Male{Fore.LIGHTCYAN_EX} Account{Fore.RESET}"))
         else:
             driver.find_element(By.XPATH, "//button[@id='FemaleButton']").click()
-            print(Center.XCenter(f"{info} {Fore.LIGHTCYAN_EX}Random: {Fore.LIGHTRED_EX}Female{Fore.LIGHTCYAN_EX} Account{Fore.RESET}"))
+            # print(Center.XCenter(f"{info} {Fore.LIGHTCYAN_EX}Random: {Fore.LIGHTRED_EX}Female{Fore.LIGHTCYAN_EX} Account{Fore.RESET}"))
 
         time.sleep(0.5)
     
@@ -228,7 +234,7 @@ def main():
 
 def starter():
     ctypes.windll.kernel32.SetConsoleTitleW(f"Roblox Account Generator By Imagine#9106")
-    global countz, jujuname, jondor, rndd#, byp_key
+    global countz, jujuname, jondor, rndd, key0
     print("\n")
     try:
         countz = int(input(Center.XCenter(f"{Fore.LIGHTCYAN_EX}How Many Accounts Do You Want To Create: {Fore.LIGHTRED_EX}")))
@@ -253,7 +259,7 @@ def starter():
         time.sleep(1)
         clear()
         starter()
-    # byp_key = input(Center.XCenter(f"{Fore.LIGHTCYAN_EX}Enter Private Key (enter N if none)\n(Entering Random Letters Will Result In The Bypasser To Not Work Properly): {Fore.LIGHTRED_EX}"))
+    key0 = input(Center.XCenter(f"{Fore.LIGHTCYAN_EX}Enter Captcha Key (Enter N if None): {Fore.LIGHTRED_EX}"))
     time.sleep(0.5)
 
     print(Center.XCenter(f"{info} {Fore.LIGHTCYAN_EX}Starting... {Fore.RESET}"))
