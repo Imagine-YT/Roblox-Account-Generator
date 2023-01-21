@@ -1,4 +1,7 @@
+I AM NOT GOING TO UPDATE THIS PROJECT ANYMORE. IT HAS BEEN DISCONTINUED. DO EXPECT BUGS, GLITCHES, ETC.
+
 Roblox Account Generator
+
 - Automatically Generates Roblox Accounts
 - Fully Customisable And Doesn't Need Proxies Or Any API Solver Keys
 - Packed .EXE Version In Releases
