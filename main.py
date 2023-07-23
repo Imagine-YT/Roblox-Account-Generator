@@ -129,7 +129,8 @@ def main():
         driver.get("https://www.roblox.com")
         time.sleep(1)
         try:
-            driver.find_element(By.XPATH, "/html/body/div[4]/div/div[1]/div[2]/div/div/button[2]").click()
+            if driver.find_element(By.XPATH, "/html/body/div[4]/div/div[1]/div[2]/div/div/button[2]").is_displayed:
+                driver.find_element(By.XPATH, "/html/body/div[4]/div/div[1]/div[2]/div/div/button[2]").click()
         except:
             pass
         print(Center.XCenter(f"{info} {Fore.LIGHTGREEN_EX}Generating An Account With The Username: {Fore.LIGHTRED_EX}" + username1))
