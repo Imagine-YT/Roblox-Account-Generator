@@ -129,10 +129,7 @@ def main():
         driver.get("https://www.roblox.com")
         time.sleep(1)
         try:
-            if driver.find_element(By.XPATH, "//button[contains(text(),'Accept All')]").is_displayed == True:
-                driver.find_element(By.XPATH, "//button[contains(text(),'Accept All')]").click()
-            else:
-                pass
+            driver.find_element(By.XPATH, "/html/body/div[4]/div/div[1]/div[2]/div/div/button[2]").click()
         except:
             pass
         print(Center.XCenter(f"{info} {Fore.LIGHTGREEN_EX}Generating An Account With The Username: {Fore.LIGHTRED_EX}" + username1))
